@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Plugin jQuery 0</title>
+	<script src="js/jquery.js"></script>
+	<script>
+		$('#TestjQ').text('jQuery Activo');
+	</script>
+	<script>
+		jQuery.fn.extend({
+			//Metodo
+			red: function(){
+				//Codigo a ejecutar
+				//$('body>div').red();
+				//Recorre todos los elementos encapsulados
+				this.each(function()
+				{
+					//this se refiere al elemento DOM por el que se esta pasando
+					jQuery(this).css('color', '#F00');
+				});
+			}
+		});
+	</script>
+</head>
+<body>
+	<red>
+	<div class="red">
+		<div id="TestjQ">jQuery inactivo!</div>
+		<div>Texto 1</div><br/>
+		<div>Texto 2</div><br/>
+		<div>Texto 3</div><br/>
+	</div>
+	</red>
+</body>
+</html>
